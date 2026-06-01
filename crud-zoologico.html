@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoologico-CRUD</title>
+    <link rel="stylesheet" href="assets/css/crud-zoologico.css">
+</head>
+<body>
+    <div class="zoo"><h1>ZOOLOGICO</h1></div>
+    <div class="caixa">
+        <h2>Cadastro de animais</h2>
+        <form>
+            <div class="cadastro">
+                <label for="campo-nome">Nome do animal</label>
+                <input type="text" id="campo-nome" placeholder="Escreva o nome do animal">
+            </div>
+
+            <div class="form-group">
+            <label for="animais">Classificação do animal</label>
+            <select id="animais">
+                <option selected disabled>Selecione uma categoria</option>
+                <option value="Mamíferos">Mamíferos</option>
+                <option value="Répteis">Répteis</option>
+                <option value="Aves">Aves</option>
+                <option value="Anfíbios">Anfíbios</option>
+                <option value="Peixes">Peixes</option>
+            </select>
+            </div>
+            <button type="submit" class="botao-salvar">
+                Salvar
+            </button>
+        </form>
+    </div>
+   
+    <div class="caixa">
+        <h2>Lista de Animais</h2>
+        <table id="tabela-animais">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Classificação</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody id="categorias">
+                <tr>
+                    <td>1</td>
+                    <td>Leão</td>
+                    <td>Mamifero</td>
+                    <td>a</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="assets/js/zoologico-bixo.js"></script>
+</body>
+</html>

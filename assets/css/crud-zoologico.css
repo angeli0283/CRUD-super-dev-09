@@ -1,0 +1,44 @@
+body {
+    height: 100vh;
+    margin: 0;
+    /* Degrada de cima (azul) para baixo (roxo) */
+    background: linear-gradient(to bottom, #ffffff, #228d02);
+}
+.zoo{
+    margin-left: 100px;
+}
+.caixa{
+    background-color: white;
+    padding: 20px;
+    margin: 25px;
+    border-radius: 30px;
+    width: 500px;
+    height: 150px;
+    display: auto;
+}
+
+#tabela-animais {
+    width: 100%;
+    border-collapse: collapse;
+}
+#tabela-animais tr{
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+#tabela-animais th{
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background: -webkit-linear-gradient(rgb(255, 255, 255) ,rgb(51, 255, 0));
+    color: rgb(0, 0, 0);
+}
+#tabela-animais td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#tabela-animais tr:nth-child(even) {
+    background-color: #f9fafb;
+}
