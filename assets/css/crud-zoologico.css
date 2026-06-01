@@ -1,44 +1,203 @@
-body {
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
     margin: 0;
-    /* Degrada de cima (azul) para baixo (roxo) */
-    background: linear-gradient(to bottom, #ffffff, #228d02);
-}
-.zoo{
-    margin-left: 100px;
-}
-.caixa{
-    background-color: white;
-    padding: 20px;
-    margin: 25px;
-    border-radius: 30px;
-    width: 500px;
-    height: 150px;
-    display: auto;
+    padding: 0;
 }
 
+body {
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    background:
+        linear-gradient(to bottom, rgba(255,255,255,0.82), rgba(34,141,2,0.88)),
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/1280px-Lion_waiting_in_Namibia.jpg')
+        center center / cover no-repeat fixed;
+    background-blend-mode: lighten, normal;
+}
+
+/* ── Título ── */
+.zoo {
+    text-align: center;
+    padding: 40px 20px 10px;
+}
+
+.zoo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    letter-spacing: 6px;
+    color: #155901;
+    text-shadow: 0 2px 18px rgba(34,141,2,0.18), 0 1px 0 #fff;
+    text-transform: uppercase;
+}
+
+/* ── Caixas centralizadas ── */
+.caixa {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 30px 35px;
+    margin: 28px auto;
+    border-radius: 22px;
+    width: 90%;
+    max-width: 680px;
+    height: auto;
+    box-shadow:
+        0 8px 32px rgba(34, 141, 2, 0.18),
+        0 2px 8px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+    border: 1px solid rgba(34,141,2,0.13);
+}
+
+.caixa h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: #155901;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(34,141,2,0.2);
+    padding-bottom: 10px;
+}
+
+/* ── Formulário ── */
+.cadastro,
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1a6e02;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input[type="text"],
+select {
+    padding: 10px 14px;
+    border: 1.5px solid rgba(34,141,2,0.3);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.97rem;
+    color: #1a3a01;
+    background: rgba(255,255,255,0.85);
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #228d02;
+    box-shadow: 0 0 0 3px rgba(34,141,2,0.13);
+}
+
+/* ── Botão salvar ── */
+.botao-salvar {
+    margin-top: 8px;
+    padding: 11px 32px;
+    background: linear-gradient(135deg, #228d02 0%, #155901 100%);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 16px rgba(34,141,2,0.28), 0 1px 4px rgba(0,0,0,0.10);
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+}
+
+.botao-salvar:hover {
+    background: linear-gradient(135deg, #27a802 0%, #1a7003 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(34,141,2,0.32);
+}
+
+.botao-salvar:active {
+    transform: translateY(0);
+}
+
+/* ── Tabela ── */
 #tabela-animais {
     width: 100%;
     border-collapse: collapse;
-}
-#tabela-animais tr{
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-#tabela-animais th{
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-    background: -webkit-linear-gradient(rgb(255, 255, 255) ,rgb(51, 255, 0));
-    color: rgb(0, 0, 0);
-}
-#tabela-animais td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+    font-size: 0.95rem;
 }
 
-#tabela-animais tr:nth-child(even) {
-    background-color: #f9fafb;
+#tabela-animais th {
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    background: linear-gradient(90deg, #228d02 0%, #155901 100%);
+    color: #fff;
+    border-bottom: 2px solid rgba(34,141,2,0.5);
+}
+
+#tabela-animais th:first-child { border-radius: 10px 0 0 0; }
+#tabela-animais th:last-child  { border-radius: 0 10px 0 0; }
+
+#tabela-animais td {
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba(34,141,2,0.1);
+    color: #1a3a01;
+    vertical-align: middle;
+}
+
+#tabela-animais tr:last-child td {
+    border-bottom: none;
+}
+
+#tabela-animais tr:nth-child(even) td {
+    background-color: rgba(34,141,2,0.04);
+}
+
+#tabela-animais tbody tr {
+    transition: background 0.15s;
+}
+
+#tabela-animais tbody tr:hover td {
+    background: rgba(34,141,2,0.09);
+}
+
+/* ── Botões da tabela ── */
+.botao-editar,
+.botao-apagar {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.83rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    margin-right: 6px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.botao-editar {
+    background: linear-gradient(135deg, #228d02, #155901);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(34,141,2,0.22);
+}
+
+.botao-editar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34,141,2,0.32);
+}
+
+.botao-apagar {
+    background: linear-gradient(135deg, #e53e3e, #9b1c1c);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(229,62,62,0.22);
+}
+
+.botao-apagar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(229,62,62,0.32);
 }
